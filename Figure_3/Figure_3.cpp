@@ -84,14 +84,8 @@ public:
 
     //метод проверки
     bool check() override {
-        if (this->get_angle_A() + this->get_angle_B() + this->get_angle_C() == 180) {
-            return true;
-        }
-        else { 
-            return false;
-        }
+        return get_angle_A() + get_angle_B() + get_angle_C() == 180;
     }
-
 protected:
     string name;
     int side_a, side_b, side_c;
@@ -110,13 +104,7 @@ public:
     }
 
     bool check() override {
-        if ((Triangle::check() == true) && (this->get_angle_C() == 90))
-        {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return (Triangle::check() == true) && (this->get_angle_C() == 90);
     }
 };
 
@@ -131,15 +119,8 @@ public:
     }
 
     bool check() override {
-        if ( ((Triangle::check() == true)) &&
-             (this->get_side_a() == this->get_side_c()) && (this->get_angle_A() == this->get_angle_C()) )
-        {
-
-            return true;
-        }
-        else {
-            return false;
-        }
+        return ((Triangle::check() == true)) &&
+            (this->get_side_a() == this->get_side_c()) && (this->get_angle_A() == this->get_angle_C());
     }
 };
 
@@ -153,14 +134,8 @@ public:
     }
 
     bool check() override {
-        if ( (Triangle::check() == true) &&
-             (this->get_side_a() == this->get_side_b()) && (this->get_side_a() == this->get_side_c()) )
-            {
-                return true;
-            }
-        else {
-            return false;
-        }
+        return (Triangle::check() == true) &&
+            (this->get_side_a() == this->get_side_b()) && (this->get_side_a() == this->get_side_c());
     }
 };
 
@@ -226,10 +201,7 @@ public:
 
     //метод проверки
     bool check() override {
-        if (this->get_angle_A() + this->get_angle_B() + this->get_angle_C() + this->get_angle_D() == 360) {
-            return true;
-        }
-        else return false;
+        return (this->get_angle_A() + this->get_angle_B() + this->get_angle_C() + this->get_angle_D() == 360);
     }
 
 protected:
@@ -248,13 +220,9 @@ public:
             angle_A_, angle_B_, angle_A_, angle_B_) {}
 
     bool check() override {
-        if ( (Quadrangle::check() == true) &&
+        return (Quadrangle::check() == true) &&
             ((this->get_angle_A() == this->get_angle_C()) && this->get_angle_B() == this->get_angle_D()) &&
-            (this->get_side_a() == this->get_side_c() && this->get_side_b() == this->get_side_d()) )
-        {
-            return true;
-        }
-        else return false;
+            (this->get_side_a() == this->get_side_c() && this->get_side_b() == this->get_side_d());
     }
 };
 
@@ -265,13 +233,9 @@ public:
     Rectangle(string name_, int side_a_, int side_b_) : Parallelogram(name_, side_a_, side_b_, 90, 90) {}
 
     bool check() override {
-        if ((Quadrangle::check() == true) &&
-        (this->get_side_a() == this->get_side_c() && this->get_side_b() == this->get_side_d()) &&
-        ((this->get_angle_A() == 90) && (this->get_angle_B() == 90) && (this->get_angle_C() == 90) && (this->get_angle_D() == 90)) )
-        {
-            return true;
-        }
-        else return false;
+        return (Quadrangle::check() == true) &&
+            (this->get_side_a() == this->get_side_c() && this->get_side_b() == this->get_side_d()) &&
+            ((this->get_angle_A() == 90) && (this->get_angle_B() == 90) && (this->get_angle_C() == 90) && (this->get_angle_D() == 90));
     }
 };
 
@@ -283,13 +247,9 @@ public:
         : Parallelogram(name_, side_a_, side_a_, angle_A_, angle_B_) {}
 
     bool check() override {
-        if ((Quadrangle::check() == true) &&
+        return (Quadrangle::check() == true) &&
         (this->get_side_a() == this->get_side_b() && this->get_side_c() == this->get_side_d() && this->get_side_a() == this->get_side_c()) &&
-        ((this->get_angle_A() == this->get_angle_C()) && this->get_angle_B() == this->get_angle_D()) )
-        {
-            return true;
-        }
-        else return false;
+            ((this->get_angle_A() == this->get_angle_C()) && this->get_angle_B() == this->get_angle_D());
     }
 };
 
@@ -301,13 +261,9 @@ public:
         : Rhombus(name_, side_a_, 90, 90) {}
 
     bool check() override {
-        if ((Quadrangle::check() == true) &&
+        return (Quadrangle::check() == true) &&
             (this->get_side_a() == this->get_side_b() && this->get_side_c() == this->get_side_d() && this->get_side_a() == this->get_side_c()) &&
-            ((this->get_angle_A() == 90) && (this->get_angle_B() == 90) && (this->get_angle_C() == 90) && (this->get_angle_D() == 90)))
-        {
-            return true;
-        }
-        else return false;
+            ((this->get_angle_A() == 90) && (this->get_angle_B() == 90) && (this->get_angle_C() == 90) && (this->get_angle_D() == 90));
     }
 };
 
